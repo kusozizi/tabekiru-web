@@ -120,6 +120,93 @@
             flex-shrink: 0;
         }
 
+        /* SDGsセクション */
+		.sdgs-section {
+		  padding: 60px 20px;
+		  background-color: #f9fbf9; /* 非常に薄い緑がかったグレー */
+		  color: #333;
+		  line-height: 1.6;
+		  text-align: center;
+		}
+
+		.sdgs-section .container {
+		  max-width: 800px;
+		  margin: 0 auto;
+		}
+
+		.sdgs-section h2 {
+		  color: #2e7d32; /* 濃い緑 */
+		  margin-bottom: 30px;
+		  font-size: 1.8rem;
+		}
+
+		.sdgs-message {
+		  margin-bottom: 40px;
+		  text-align: left; /* 文章は左揃えが読みやすいです */
+		}
+
+		.sdgs-list {
+		  list-style: none;
+		  padding: 0;
+		  margin-bottom: 50px;
+		  display: flex;
+		  flex-wrap: wrap;
+		  justify-content: space-around;
+		  gap: 20px;
+		}
+
+		.sdgs-list li {
+		  background: white;
+		  padding: 15px 20px;
+		  border-radius: 10px;
+		  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+		  flex: 1 1 200px;
+		}
+
+		.sdgs-list li span {
+		  display: block;
+		  font-size: 1.5rem;
+		  margin-bottom: 10px;
+		}
+
+		/* 目立たない補足部分 */
+		.sdgs-targets {
+		  border-top: 1px solid #ddd;
+		  padding-top: 30px;
+		  text-align: left;
+		  font-size: 0.9rem;
+		  color: #666;
+		}
+
+		.target-item {
+		  margin-bottom: 15px;
+		  display: flex;
+		  flex-direction: column;
+		}
+
+		.target-label {
+		  font-weight: bold;
+		  color: #555;
+		  margin-bottom: 2px;
+		}
+
+		.target-desc {
+		  margin-left: 0;
+		}
+
+		/* スマホ対応 */
+		@media (min-width: 600px) {
+		  .target-item {
+		    flex-direction: row;
+		    justify-content: space-between;
+		  }
+		  .target-desc {
+		    margin-left: 20px;
+		    flex: 1;
+		    text-align: right;
+		  }
+		}
+
         /* ボタン */
         .btn-container {
             text-align: center;
@@ -181,6 +268,39 @@
         <a href="#" class="btn">GooglePlay審査中</a>
     </div>
 </section>
+
+<section id="sdgs" class="sdgs-section">
+  <div class="container">
+    <h2>タベキルとSDGs</h2>
+    
+    <div class="sdgs-message">
+      <p><strong>「もったいない」を、未来へのギフトに。</strong></p>
+      <p>
+        日本では、まだ食べられるのに捨てられてしまう食品が年間多く発生しています。
+        「タベキル」は、日々の賞味期限をスマートに管理することで、家庭からのフードロスを無理なくゼロに近づけます。
+        あなたが食材を「食べきる」その一歩が、家計を助け、豊かな地球を守ることにつながります。
+      </p>
+    </div>
+
+    <ul class="sdgs-list">
+      <li><span>🍏</span> <strong>フードロス削減:</strong> 家庭の「もったいない」をゼロに。</li>
+      <li><span>🌍</span> <strong>環境保護:</strong> ゴミを減らしてCO2排出を抑制。</li>
+      <li><span>💰</span> <strong>家計に優しく:</strong> 食材を使い切ることで経済的な暮らしを。</li>
+    </ul>
+
+    <div class="sdgs-targets">
+      <div class="target-item">
+        <span class="target-label">目標12「つくる責任 つかう責任」</span>
+        <span class="target-desc">家庭から出る食品ロスを減らすことは、この目標に直結します。</span>
+      </div>
+      <div class="target-item">
+        <span class="target-label">目標13「気候変動に具体的な対策を」</span>
+        <span class="target-desc">廃棄される食品を減らすことで、ゴミ処理時のCO2排出削減に貢献します。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
     <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; font-size: 0.9rem;">
         <li>
