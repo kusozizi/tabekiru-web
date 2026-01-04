@@ -236,6 +236,60 @@
             font-size: 0.8rem;
             background-color: #eee;
         }
+        
+		/* スライダー全体の枠 */
+		.screenshot-container {
+		    max-width: 1000px;
+		    margin: 0 auto;
+		    overflow: hidden; /* はみ出しを隠す */
+		}
+
+		/* 横に並べてスクロールさせるエリア */
+		.screenshot-scroll {
+		    display: flex;
+		    overflow-x: auto; /* 横スクロールを許可 */
+		    scroll-snap-type: x mandatory; /* Google Playのようなピタッと止まる動き */
+		    gap: 20px;
+		    padding-bottom: 20px;
+		    -webkit-overflow-scrolling: touch; /* iOSでのスクロールを滑らかに */
+		}
+
+		/* スクロールバーのデザイン（任意：非表示にする場合は display: none） */
+		.screenshot-scroll::-webkit-scrollbar {
+		    height: 6px;
+		}
+		.screenshot-scroll::-webkit-scrollbar-thumb {
+		    background: #ddd;
+		    border-radius: 10px;
+		}
+
+		/* 各画像アイテム */
+		.screenshot-item {
+		    flex: 0 0 250px; /* 画像の幅を固定（スマホなら200px程度がおすすめ） */
+		    scroll-snap-align: center; /* スクロール時に中央で止まる */
+		    text-align: center;
+		}
+
+		.screenshot-item img {
+		    width: 100%;
+		    border-radius: 15px;
+		    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+		    border: 1px solid #eee;
+		    margin-bottom: 10px;
+		}
+
+		.screenshot-item p {
+		    font-size: 0.9rem;
+		    color: #666;
+		    margin: 0;
+		}
+
+		/* PCで見るときは少し大きく */
+		@media (min-width: 768px) {
+		    .screenshot-item {
+		        flex: 0 0 280px;
+		    }
+		}
     </style>
 </head>
 <body>
@@ -264,6 +318,49 @@
         </div>
     </div>
 
+    <div class="btn-container">
+        <a href="#" class="btn">GooglePlay審査中</a>
+    </div>
+</section>
+
+<section id="screenshots" style="padding: 60px 20px; background: #f9f9f9;">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.5rem; color: #333;">アプリ画面</h2>
+    
+    <div class="screenshot-container">
+        <div class="screenshot-scroll">
+            <div class="screenshot-item">
+                <img src="Screen2.png" alt="レシート撮影画面">
+                <p>レシートを撮るだけ</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen3.png" alt="商品撮影画面">
+                <p>商品を撮るだけ</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen4.png" alt="バーコード撮影画面">
+                <p>バーコードを撮るだけ</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen5.png" alt="商品登録画面">
+                <p>シンプルな設定</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen6.png" alt="手入力画面">
+                <p>手入力もできます</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen7.png" alt="通知設定画面">
+                <p>食べごろを通知</p>
+            </div>
+            <div class="screenshot-item">
+                <img src="Screen8.png" alt="リスト管理画面">
+                <p>リストで見やすく管理</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
     <div class="btn-container">
         <a href="#" class="btn">GooglePlay審査中</a>
     </div>
